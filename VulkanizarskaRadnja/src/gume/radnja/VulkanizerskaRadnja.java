@@ -3,9 +3,29 @@ package gume.radnja;
 import java.util.LinkedList;
 import gume.AutoGuma;
 
+/**
+ * 
+ * Klasa predstavlja vulkanizersku radnju sa auto gumama.
+ * 
+ * @author Jelena Sreckovic
+ *
+ */
+
 public class VulkanizerskaRadnja {
+	
+	/**
+	 * Lista sa auto gumam iz vulkanizerske radnje.
+	 */
 
 	private LinkedList<AutoGuma> gume = new LinkedList<AutoGuma>();
+	
+	/**
+	 * Dodaje novu auto gumu u listu. Guma se dodaje na pocetak liste guma.
+	 * 
+	 * @param a Guma koju je potrebno dodati.
+	 * 
+	 * @throws java.lang.RuntimeException Ako je uneta guma null ili lista vec sadrzi tu gumu.
+	 */
 	
 	public void dodajGumu(AutoGuma a) {
 		if (a == null)
@@ -16,6 +36,14 @@ public class VulkanizerskaRadnja {
 		
 		gume.addFirst(a);
 	}
+	
+	/**
+	 * Pretrazuje gume po marki i modelu i vraca listu guma koje odgovaraju zadatom kriterijumu.  
+	 * 
+	 * @param markaModel Marka i model kao kriterijum pretrage
+	 * 
+	 * @return Lista guma koje odgovaraju kriterijumima ili null ako je kriterijum unet kao null.
+	 */
 	
 	public LinkedList<AutoGuma> pronadjiGumu(String markaModel) {
 		if (markaModel == null)
